@@ -1,9 +1,11 @@
 import express from 'express';
-import userRouter from './book.js';
+import bookRouter from './book.js';
+import authRouter from './auth.js';
 
 const route = express.Router();
 
-route.use('/api', userRouter);
+route.use('/api', bookRouter);
+route.use('/api', authRouter);
 route.use("*", (req, res) => {
     res.status(404).json({
         status: 404,

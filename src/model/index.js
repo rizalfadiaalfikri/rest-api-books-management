@@ -3,6 +3,7 @@ import Book from "./book.js";
 import Genre from "./genre.js";
 import Purchase from "./purchase.js";
 import Sales from "./sales.js";
+import User from "./user.js";
 
 const book = sequelize.define('Book', Book, {tableName: 'book', underscored: true});
 const genre = sequelize.define('Genre', Genre, {tableName: 'genre', underscored: true});
@@ -50,6 +51,9 @@ sales.belongsTo(book, {
     onDelete: 'RESTRICT',
     onUpdate: 'RESTRICT',
 })
+
+
+const user = sequelize.define('User', User, {tableName: 'user'});
 
 sequelize.sync();
 
