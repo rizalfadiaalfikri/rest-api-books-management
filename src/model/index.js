@@ -14,7 +14,8 @@ genre.hasOne(book, {
 })
 
 book.belongsTo(genre, {
-    foreignKey: 'id',
+    foreignKey: 'genre_id',
+    as: 'genre',
     onDelete: 'RESTRICT',
     onUpdate: 'RESTRICT',
 })
@@ -30,6 +31,7 @@ book.hasMany(purchase, {
 
 purchase.belongsTo(book, {
     foreignKey: 'book_id',
+    as: 'book',
     onDelete: 'RESTRICT',
     onUpdate: 'RESTRICT',
 })
@@ -44,6 +46,7 @@ book.hasMany(sales, {
 
 sales.belongsTo(book, {
     foreignKey: 'book_id',
+    as: 'book',
     onDelete: 'RESTRICT',
     onUpdate: 'RESTRICT',
 })
