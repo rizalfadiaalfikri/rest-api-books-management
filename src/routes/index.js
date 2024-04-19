@@ -2,9 +2,11 @@ import express from 'express';
 import bookRouter from './book.js';
 import authRouter from './auth.js';
 import genreRouter from './genre.js';
+import purchaseRouter from './purchase.js';
 
 const route = express.Router();
 
+route.use('/api', purchaseRouter);
 route.use('/api', bookRouter);
 route.use('/api', genreRouter);
 route.use('/api', authRouter);

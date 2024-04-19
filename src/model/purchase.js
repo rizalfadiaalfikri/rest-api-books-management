@@ -19,7 +19,7 @@ const Purchase = {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    Purchase_date: {
+    purchase_date: {
         type: Sequelize.DATE,
         allowNull: false
     }
